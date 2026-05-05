@@ -1,0 +1,22 @@
+{
+  "name": "RedBox Performance AI",
+  "short_name": "RedBox AI",
+  "description": "Vehicle intelligence and safe optimization platform",
+  "start_url": "/dashboard",
+  "display": "standalone",
+  "background_color": "#1a1a2e",
+  "theme_color": "#dc2626",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/images/redbox-logo.jpeg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "/images/redbox-logo.jpeg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}
