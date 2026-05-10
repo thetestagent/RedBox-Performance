@@ -7,8 +7,8 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'RedBox Performance AI',
-  description: 'Vehicle intelligence and safe optimization platform - Connect, analyze, and optimize your vehicle performance with AI',
+  title: 'RedBox Performance | Elite Tuning & AI Diagnostics',
+  description: 'Engineered to Perform. RedBox Performance delivers elite tuning, advanced AI diagnostics, and real-world performance solutions for drivers who demand more.',
   generator: 'v0.app',
   manifest: '/manifest.json',
   appleWebApp: {
@@ -39,7 +39,7 @@ export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
   maximumScale: 1,
-  themeColor: '#1a1a2e',
+  themeColor: '#0a0a0a',
   userScalable: false,
 }
 

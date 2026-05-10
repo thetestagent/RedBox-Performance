@@ -93,3 +93,76 @@ export interface ValidationResult {
   riskScore: number
   confidence: number
 }
+
+// New Production Tables
+
+export interface DiagnosticSession {
+  id: string
+  vehicle_id: string
+  user_id: string
+  session_type: 'full_scan' | 'quick_check' | 'module_specific' | 'live_monitoring'
+  status: 'pending' | 'in_progress' | 'completed' | 'failed' | 'cancelled'
+  started_at: string
+  completed_at: string | null
+  modules_scanned: string[]
+  fault_codes_found: FaultCode[]
+  ai_recommendations: AIRecommendation[]
+  performance_metrics: Record<string, number>
+  raw_data: Record<string, unknown>
+  created_at: string
+  updated_at: string
+}
+
+export interface FaultCode {
+  code: string
+  description: string
+  severity: 'info' | 'warning' | 'critical'
+  module: string
+  suggested_action: string
+}
+
+export interface AIRecommendation {
+  id: string
+  type: 'maintenance' | 'performance' | 'safety' | 'efficiency'
+  priority: 'low' | 'medium' | 'high' | 'urgent'
+  title: string
+  description: string
+  estimated_cost?: number
+  estimated_time?: string
+}
+
+export interface AuditLog {
+  id: string
+  user_id: string | null
+  action: string
+  entity_type: string
+  entity_id: string | null
+  old_values: Record<string, unknown> | null
+  new_values: Record<string, unknown> | null
+  ip_address: string | null
+  user_agent: string | null
+  metadata: Record<string, unknown>
+  created_at: string
+}
+
+export interface ECUProfile {
+  id: string
+  vehicle_id: string
+  user_id: string
+  profile_name: string
+  profile_type: 'stock' | 'stage1' | 'stage2' | 'stage3' | 'custom' | 'economy' | 'performance'
+  is_active: boolean
+  parameters: Record<string, unknown>
+  power_gains: {
+    hp: number
+    torque: number
+  }
+  fuel_map: Record<string, unknown>
+  timing_map: Record<string, unknown>
+  boost_map: Record<string, unknown>
+  safety_limits: Record<string, unknown>
+  notes: string | null
+  version: number
+  created_at: string
+  updated_at: string
+}

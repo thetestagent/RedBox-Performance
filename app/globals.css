@@ -117,3 +117,102 @@
 .tabular-nums {
   font-variant-numeric: tabular-nums;
 }
+
+/* Metallic text gradient effect */
+.text-metallic {
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #e8e8e8 25%,
+    #b8b8b8 50%,
+    #d0d0d0 75%,
+    #ffffff 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 2px 20px rgba(255, 255, 255, 0.1);
+}
+
+/* Red glow effect */
+@keyframes red-glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 8px rgba(220, 38, 38, 0.4));
+  }
+  50% {
+    filter: drop-shadow(0 0 16px rgba(220, 38, 38, 0.7));
+  }
+}
+
+.red-glow {
+  animation: red-glow 2s ease-in-out infinite;
+}
+
+/* Light trail effect */
+@keyframes light-trail {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+
+.light-trail {
+  animation: light-trail 3s ease-in-out infinite;
+}
+
+/* Bar animation for performance index */
+@keyframes bar-grow {
+  0% {
+    transform: scaleY(0.3);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+  100% {
+    transform: scaleY(0.3);
+  }
+}
+
+.animate-bar {
+  animation: bar-grow 1.5s ease-in-out infinite;
+}
+
+/* Speedometer needle animation */
+@keyframes needle-sweep {
+  0% {
+    transform: rotate(-45deg);
+  }
+  100% {
+    transform: rotate(135deg);
+  }
+}
+
+.animate-needle {
+  animation: needle-sweep 2s ease-out forwards;
+}
+
+/* Card hover glow effect */
+.card-glow {
+  transition: all 0.3s ease;
+}
+
+.card-glow:hover {
+  box-shadow: 0 0 30px rgba(220, 38, 38, 0.2);
+  border-color: rgba(220, 38, 38, 0.4);
+}
+
+/* Hero section background gradient */
+.hero-gradient {
+  background: radial-gradient(
+    ellipse 80% 50% at 50% 100%,
+    rgba(220, 38, 38, 0.15) 0%,
+    transparent 60%
+  );
+}
